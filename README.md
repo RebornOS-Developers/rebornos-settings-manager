@@ -1,15 +1,16 @@
-# Manjaro Settings Manager
+# RebornOS Settings Manager
+Fork of the Manjaro settings manager for RebornOS 
 
-The Manjaro Settings Manager offers you a series of settings, which are
-either enabled by Manjaro (i.e. installation of multiple kernels) or are 
+The RebornOS Settings Manager offers you a series of settings, which are
+either enabled by RebornOS (i.e. installation of multiple kernels) or are 
 missing from at least some of popular Desktop Environments and Window Managers.
 
-Currently has modules written for Manjaro Hardware Detection (MHWD), Language,
+Currently has modules written for MHWD, Language,
 Kernel, Keyboard, Time and Date and User Accounts.
 
 It also includes a daemon to notify user of new language packages or kernels.
 
-Manjaro Settings Manager is under active development.
+RebornOS Settings Manager is under active development.
 
 
 ### BUILD INSTRUCTIONS
@@ -49,12 +50,3 @@ Now the build is complete and you can run it using `msm` command in terminal.
 
 It will also show up the new kcm modules in kde's systemsettings or issuing the command:
 `kcmshell5 msm_{kernel,keyboard,language_packages,locale,mhwd,notifications,timedate,users}`
-
-
-### RESOURCES
-
-* Website        https://manjaro.org/
-* Wiki           https://wiki.manjaro.org/
-* Mailing List   https://lists.manjaro.org/mailman/listinfo
-* Download       https://manjaro.org/get-manjaro/
-* IRC            #manjaro (www.freenode.com)

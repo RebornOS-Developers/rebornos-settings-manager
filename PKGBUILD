@@ -1,19 +1,19 @@
 # Maintainer : Ramon Buldo <ramon@manjaro.org>
 
 pkgbase=manjaro-settings-manager
-pkgname=('manjaro-settings-manager' 'manjaro-settings-manager-kcm' 
-         'manjaro-settings-manager-notifier' 'manjaro-settings-manager-knotifier')
+pkgname=('rebornos-settings-manager' 'rebornos-settings-manager-kcm' 
+         'rebornos-settings-manager-notifier' 'rebornos-settings-manager-knotifier')
 pkgver=0.5.6
 #_commit=e085b661c3c97e8aa39a5b49896a88a95d84caf9
 pkgrel=1
-pkgdesc="Manjaro Linux System Settings Tool"
+pkgdesc="Rebornos Linux System Settings Tool"
 arch=('i686' 'x86_64')
 url="https://gitlab.manjaro.org/applications/manjaro-settings-manager"
 license=("GPL")
 depends=('icu<64.2' 'qt5-base>=5.12.3' 'hwinfo' 'kitemmodels' 'kauth' 
          'kcoreaddons' 'ckbcomp' 'xdg-utils')
-optdepends=('manjaro-settings-manager-notifier: qt-based'
-            'manjaro-settings-manager-knotifier: knotifications-based')
+optdepends=('rebornos-settings-manager-notifier: qt-based'
+            'rebornos-settings-manager-knotifier: knotifications-based')
 makedepends=('extra-cmake-modules' 'kdoctools' 'qt5-tools' 'knotifications' 
              'kconfigwidgets' 'kcmutils')
 conflicts=('kcm-msm')
@@ -53,8 +53,8 @@ package_manjaro-settings-manager() {
 }
 
 package_manjaro-settings-manager-kcm() {
-  pkgdesc="Manjaro Linux System Settings Tool (KCM for Plasma 5)"
-  depends=('manjaro-settings-manager' 'kcmutils' 'kconfigwidgets')
+  pkgdesc="Rebornos Linux System Settings Tool (KCM for Plasma 5)"
+  depends=('rebornos-settings-manager' 'kcmutils' 'kconfigwidgets')
   replaces=('kcm-msm')
   cd "$srcdir/${pkgbase}-${pkgver}/build"
   make DESTDIR=${pkgdir} install
@@ -65,10 +65,10 @@ package_manjaro-settings-manager-kcm() {
 }
 
 package_manjaro-settings-manager-notifier() {
-  pkgdesc="Manjaro Linux System Settings Tool (Notifier)"
-  depends=('manjaro-settings-manager')
-  provides=('manjaro-settings-manager-kde-notifier')
-  conflicts=('manjaro-settings-manager-kde-notifier')
+  pkgdesc="Rebornos Linux System Settings Tool (Notifier)"
+  depends=('rebornos-settings-manager')
+  provides=('rebornos-settings-manager-kde-notifier')
+  conflicts=('rebornos-settings-manager-kde-notifier')
   cd "$srcdir/${pkgbase}-${pkgver}/build"
   make DESTDIR=${pkgdir} install
   rm -rf $pkgdir/etc/dbus-1
@@ -82,10 +82,10 @@ package_manjaro-settings-manager-notifier() {
 }
 
 package_manjaro-settings-manager-knotifier() {
-  pkgdesc="Manjaro Linux System Settings Tool (Notifier for Plasma 5)"
-  depends=('manjaro-settings-manager' 'knotifications')
-  conflicts=('manjaro-settings-manager-notifier')
-  replaces=('manjaro-settings-manager-kde-notifier')
+  pkgdesc="RebornOS Linux System Settings Tool (Notifier for Plasma 5)"
+  depends=('rebornos-settings-manager' 'knotifications')
+  conflicts=('rebornos-settings-manager-notifier')
+  replaces=('rebornos-settings-manager-kde-notifier')
   cd "$srcdir/${pkgbase}-${pkgver}/build"
   make DESTDIR=${pkgdir} install
   rm -rf $pkgdir/etc/dbus-1

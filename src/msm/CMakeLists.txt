@@ -3,7 +3,7 @@ cmake_policy(SET CMP0063 NEW)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 file(GLOB MSM_GLOB
-     manjaro-settings-manager.desktop)
+     rebornos-settings-manager.desktop)
 
 set(MSM_SRCS
     ${MSM_GLOB}
